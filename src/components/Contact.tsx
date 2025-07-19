@@ -22,38 +22,51 @@ const Contact: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const NOTIFY_ME_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_NOTIFY_ME_TEMPLATE_ID;
 
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY)
-      .then(() => {
-        setIsSubmitting(false);
-        setSubmitMessage({
-          type: 'success',
-          text: 'Your message has been sent! I will get back to you soon.',
-        });
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        });
-
-        setTimeout(() => {
-          setSubmitMessage(null);
-        }, 5000);
-      })
-      .catch(() => {
-        setIsSubmitting(false);
-        setSubmitMessage({
-          type: 'error',
-          text: 'Failed to send message. Please try again.',
-        });
-      });
+  const emailParams = {
+    name: formData.name,
+    email: formData.email,
+    subject: formData.subject,
+    message: formData.message,
   };
+
+  // Send email to user (auto-reply)
+  const autoReply = emailjs.send(SERVICE_ID, TEMPLATE_ID, emailParams, PUBLIC_KEY);
+
+  // Send email to you (notify)
+  const notifyMe = emailjs.send(SERVICE_ID, NOTIFY_ME_TEMPLATE_ID, emailParams, PUBLIC_KEY);
+
+  Promise.all([autoReply, notifyMe])
+    .then(() => {
+      setIsSubmitting(false);
+      setSubmitMessage({
+        type: 'success',
+        text: 'Your message has been sent! I will get back to you soon.',
+      });
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+      setTimeout(() => {
+        setSubmitMessage(null);
+      }, 5000);
+    })
+    .catch(() => {
+      setIsSubmitting(false);
+      setSubmitMessage({
+        type: 'error',
+        text: 'Failed to send message. Please try again.',
+      });
+    });
+};
+
 
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
