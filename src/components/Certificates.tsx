@@ -54,13 +54,37 @@ const Certificates: React.FC = () => {
       pdfUrl: "/certificates/Understanding-Google-Cloud-Platform.pdf",
       description: "Comprehensive understanding of Google Cloud Platform services and architecture"
     },
-        {
+    {
       id: 5,
       name: "IIPA SOUTHERN REGIONAL CONFERENCE",
       issuer: "IIPA Pondicherry & Pondocherry University",
       date: "2025",
       pdfUrl: "/certificates/IIPA_SOUTHERN_REGIONAL_CONFERENCE.pdf",
       description: "Our Abstract got Selected and We presented our paper titled AI-Powered Government Scheme Recommender: A Public Administration Digital Transformation Tool in IIPA SOUTHERN REGIONAL CONFERENCE at Pondicherry University "
+    },
+    {
+      id: 6,
+      name: "8 Things you wish you had known about LLMs",
+      issuer: "IIT Madras",
+      date: "2025",
+      pdfUrl: "/certificates/JASWANTHPRASANNA - 8 Things you wish you had known about LLMs.pdf",
+      description: "How to work more effectively and responsibly with LLMs"
+    },
+    {
+      id: 7,
+      name: "Building Trustworthy AI through Data Quality",
+      issuer: "IIT Madras & Cargill",
+      date: "2025",
+      pdfUrl: "/certificates/JASWANTHPRASANNA - Building Trustworthy AI through Data Quality.pdf",
+      description: "Deep insights into how high-quality data can enable AI systems that are not only powerful but also reliable, ethical, and responsible."
+    },
+    {
+      id: 8,
+      name: "GenAI",
+      issuer: "IIT Madras",
+      date: "2025",
+      pdfUrl: "/certificates/JASWANTHPRASANNA - GenAI.pdf",
+      description: "Deep dive into the fascinating world of GenAI — how these models work, their capabilities, and the real-world impact they are already having across industries"
     },
   ];
 
