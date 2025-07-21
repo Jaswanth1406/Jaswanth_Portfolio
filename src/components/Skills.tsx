@@ -14,6 +14,8 @@ const Skills: React.FC = () => {
   ];
 
   const backendSkills: Skill[] = [
+    { name: 'Python', level: 85, color: 'bg-red-700' },
+    { name: 'Java', level: 50, color: 'bg-green-800'},
     { name: 'Flask', level: 85, color: 'bg-blue-700' },
     { name: 'SQL', level: 80, color: 'bg-orange-600' },
     { name: 'Django', level: 50, color: 'bg-yellow-800' },
