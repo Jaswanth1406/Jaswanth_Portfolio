@@ -26,6 +26,13 @@ const Education: React.FC = () => {
       description: 'Pursuing B.S in Data Science and Applications. CGPA: 7.84'
     },
     {
+      degree: 'Diploma in Programming',
+      institution: 'Indian Institute of Technology Madras',
+      location: 'Chennai',
+      period: '2023 - 2026',
+      description: 'Completed Diploma in Programming with CGPA: 8.37'
+    },
+    {
       degree: 'Higher Secondary Education',
       institution: 'Velammal Matriculation Hr sec School',
       location: 'Mogappair West',

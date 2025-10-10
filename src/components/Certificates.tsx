@@ -86,6 +86,22 @@ const Certificates: React.FC = () => {
       pdfUrl: "/certificates/JASWANTHPRASANNA - GenAI.pdf",
       description: "Deep dive into the fascinating world of GenAI — how these models work, their capabilities, and the real-world impact they are already having across industries"
     },
+    {
+      id: 9,
+      name: "Deploying ML Apps at Lightning Speed using GCP",
+      issuer: "IIT Madras",
+      date: "2025",
+      pdfUrl: "/certificates/JASWANTHPRASANNA - Deploying ML Apps at Lightning Speed using GCP.pdf",
+      description: "Deep dive into the fascinating world of GenAI — how these models work, their capabilities, and the real-world impact they are already having across industries"
+    },
+    {
+      id: 10,
+      name: "Code, Commit, Collaborate: Hands-on with Git & GitHub",
+      issuer: "IIT Madras",
+      date: "2025",
+      pdfUrl: "/certificates/JASWANTHPRASANNA - Code, Commit,Collaborate Hands-on with Git & GitHub.pdf",
+      description: "Deep dive into the fascinating world of GenAI — how these models work, their capabilities, and the real-world impact they are already having across industries"
+    },
   ];
 
   const nextCertificate = () => {

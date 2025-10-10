@@ -8,7 +8,7 @@ interface Project {
   image: string;
   technologies: string[];
   github: string;
-  category: 'web' | 'ml' | 'all';
+  category: ('web' | 'ml' | 'all')[]; 
 }
 
 const Projects: React.FC = () => {
@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/3958958/pexels-photo-3958958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       technologies: ['Flask', 'Jinja2', 'Bootstrap', 'SQLite' , 'HTML & CSS'],
       github: 'https://github.com/Jaswanth1406/HouseHoldServiceApp-V1',
-      category: 'web'
+      category: ['web']
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/8005397/pexels-photo-8005397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       technologies: ['Flask', 'VueJS', 'Bootstrap', 'SQLite', 'Redis', 'Celery', 'Flask-Mail','Flask-Excel','Flask-Restful','Flask-Security'],
       github: 'https://github.com/Jaswanth1406/HouseHoldServiceApp-V2',
-      category: 'web'
+      category: ['web']
     },
     {
       id: 3,
@@ -40,13 +40,33 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       technologies: ['HTML', 'CSS', 'Bootstrap', 'Python', 'Flask', 'Scikit-learn'],
       github: 'https://github.com/Jaswanth1406/Heart-Disease-Prediction',
-      category: 'ml'
+      category: ['ml']
+    },
+    {
+      id: 4,
+      title: 'Bone Fracture Localization',
+      description: 'Using Machine learning and Computer Vision it finds Bone Fracture from Scans.',
+      image: "/Bone fracture localization.jpeg",
+      technologies: ['PyTorch', 'Torchvision', 'OpenCV (cv2)', 'Pandas', 'NumPy', 'Scikit-learn'],
+      github: 'https://github.com/Jaswanth1406/Bone-Fracture-Localization',
+      category: ['ml']
+    },
+    {
+      id: 5,
+      title: 'Evidence Verification Agent',
+      description: 'Using Machine learning and Computer Vision it finds Bone Fracture from Scans.',
+      image: "/Homepage.png",
+      technologies: ['JavaScript', 'FastApi', 'HTML', 'CSS', 'Web Scraping', 'Google Chrome Extensions' , 'PyTorch'],
+      github: 'https://github.com/Jaswanth1406/Evidence-Verification-AI-Agent',
+      category: ['ml', 'web']
     }
   ];
-  
+
+    
   const filteredProjects = filter === 'all' 
     ? projects 
-    : projects.filter(project => project.category === filter);
+    : projects.filter(project => project.category.includes(filter));
+
 
   return (
     <section id="projects" className="py-20 bg-white">
