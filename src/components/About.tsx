@@ -14,7 +14,7 @@ const About: React.FC = () => {
           <div className="order-2 md:order-1">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Hi, I'm Jaswanth Prasanna</h3>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              I am an inquisitive mind that has a huge love for learning and building. I could dive deep into Large Language Models (LLMs), mining hidden patterns in Data Analytics, or making systems run smoothly as possible with Software Project Management - I love exploring the intersection of intelligence, insight, and innovation.
+              I am an inquisitive mind that has a huge love for learning and building. A 4x Hackathon Winner, I thrive on turning bold ideas into real-world solutions under pressure. Whether it's diving deep into Large Language Models (LLMs), mining hidden patterns in Data Analytics, or making systems run smoothly with Software Project Management — I love exploring the intersection of intelligence, insight, and innovation.
             </p>
             
             <div className="grid grid-cols-2 gap-4">

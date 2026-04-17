@@ -16,14 +16,14 @@ const Education: React.FC = () => {
       institution: 'Rajalakshmi Institute of Technology',
       location: 'Chennai',
       period: '2023 - 2027',
-      description: 'Currently pursuing B.E in Computer Science with specialization in Artificial Intelligence and Machine Learning. CGPA: 8.33'
+      description: 'Currently pursuing B.E in Computer Science with specialization in Artificial Intelligence and Machine Learning. CGPA: 8.46'
     },
     {
       degree: 'B.S in Data Science and Applications',
       institution: 'Indian Institute of Technology Madras',
       location: 'Chennai',
       period: '2023 - 2027',
-      description: 'Pursuing B.S in Data Science and Applications. CGPA: 7.84'
+      description: 'Pursuing B.S in Data Science and Applications. CGPA: 7.87'
     },
     {
       degree: 'Diploma in Programming',

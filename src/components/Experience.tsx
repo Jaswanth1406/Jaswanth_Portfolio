@@ -1,9 +1,10 @@
 import React from 'react';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, ExternalLink } from 'lucide-react';
 
 interface ExperienceItem {
   title: string;
   company: string;
+  companyUrl?: string;
   period: string;
   description: string[];
 }
@@ -11,36 +12,15 @@ interface ExperienceItem {
 const Experience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
-      title: 'Senior Frontend Developer',
-      company: 'TechCorp Inc.',
-      period: 'Jan 2022 - Present',
+      title: 'Full Stack AI Developer Intern',
+      company: 'Devspace',
+      companyUrl: 'http://devspace.uno/',
+      period: 'Nov 2025 - Apr 2026 · Hybrid',
       description: [
-        'Lead a team of 5 developers in building a complex SaaS application',
-        'Improved application performance by 40% through code optimization',
-        'Implemented CI/CD pipelines that reduced deployment time by 60%',
-        'Mentored junior developers and conducted code reviews'
-      ]
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'WebSolutions LLC',
-      period: 'Mar 2019 - Dec 2021',
-      description: [
-        'Developed RESTful APIs using Node.js and Express',
-        'Built responsive front-end interfaces with React and Redux',
-        'Integrated third-party services and APIs',
-        'Implemented authentication and authorization systems'
-      ]
-    },
-    {
-      title: 'Junior Web Developer',
-      company: 'Digital Innovations',
-      period: 'Jun 2017 - Feb 2019',
-      description: [
-        'Maintained and updated existing web applications',
-        'Collaborated with designers to implement UI components',
-        'Fixed bugs and improved application performance',
-        'Participated in agile development processes'
+        'Integrated Supabase for backend services including authentication, database, and real-time features',
+        'Performed extensive code refactoring to improve maintainability, readability, and performance',
+        'Built and optimized full-stack features using modern frameworks and AI-powered tooling',
+        'Collaborated with the team on product development and deployment workflows'
       ]
     }
   ];
@@ -52,7 +32,7 @@ const Experience: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Experience</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="max-w-2xl mx-auto text-lg text-gray-700">
-            My professional journey and the companies I've had the pleasure to work with.
+            My professional journey and work experience.
           </p>
         </div>
         
@@ -84,7 +64,13 @@ const Experience: React.FC = () => {
                       <p className="text-gray-600 font-medium">{exp.period}</p>
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-1">{exp.title}</h3>
-                    <p className="text-blue-600 font-medium mb-2">{exp.company}</p>
+                    {exp.companyUrl ? (
+                      <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 font-medium mb-2 inline-flex items-center gap-1 hover:text-blue-800 transition-colors">
+                        {exp.company} <ExternalLink size={14} />
+                      </a>
+                    ) : (
+                      <p className="text-blue-600 font-medium mb-2">{exp.company}</p>
+                    )}
                     <p className="hidden md:block text-gray-600 mb-4">{exp.period}</p>
                     <ul className="space-y-2">
                       {exp.description.map((item, idx) => (
