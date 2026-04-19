@@ -1,26 +1,174 @@
+/* ============================================
+   CYBERPUNK ANIMATION KEYFRAMES
+   ============================================ */
+
+/* Fade In Variants */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Glow Effects */
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }
+  50% { text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor; }
+}
+
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 240, 255, 0.3), inset 0 0 5px rgba(0, 240, 255, 0.1); }
+  50% { box-shadow: 0 0 15px rgba(0, 240, 255, 0.5), 0 0 30px rgba(0, 240, 255, 0.2), inset 0 0 10px rgba(0, 240, 255, 0.2); }
+}
+
+/* Terminal / Typing */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from, to { border-right-color: transparent; }
+  50% { border-right-color: #00f0ff; }
+}
+
+/* Glitch Effect */
+@keyframes glitch1 {
+  0% { clip-path: inset(20% 0 60% 0); transform: translate(-3px, 0); }
+  20% { clip-path: inset(60% 0 10% 0); transform: translate(3px, 0); }
+  40% { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 0); }
+  60% { clip-path: inset(80% 0 5% 0); transform: translate(1px, 0); }
+  80% { clip-path: inset(10% 0 70% 0); transform: translate(2px, 0); }
+  100% { clip-path: inset(50% 0 30% 0); transform: translate(-1px, 0); }
+}
+
+@keyframes glitch2 {
+  0% { clip-path: inset(60% 0 20% 0); transform: translate(3px, 0); }
+  20% { clip-path: inset(10% 0 60% 0); transform: translate(-3px, 0); }
+  40% { clip-path: inset(50% 0 30% 0); transform: translate(2px, 0); }
+  60% { clip-path: inset(30% 0 50% 0); transform: translate(-1px, 0); }
+  80% { clip-path: inset(70% 0 10% 0); transform: translate(-2px, 0); }
+  100% { clip-path: inset(20% 0 60% 0); transform: translate(1px, 0); }
+}
+
+/* Scan Line */
+@keyframes scanlineMove {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
+
+/* Shimmer / Holographic */
+@keyframes holographic {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Float */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Progress Bar Fill */
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: var(--target-width, 100%); }
+}
+
+/* Pulse Ring */
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Rotate */
+@keyframes slowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Boot screen specific */
+@keyframes bootFlicker {
+  0%, 100% { opacity: 1; }
+  3% { opacity: 0.4; }
+  6% { opacity: 1; }
+  7% { opacity: 0.6; }
+  9% { opacity: 1; }
+  50% { opacity: 1; }
+  52% { opacity: 0.8; }
+  53% { opacity: 1; }
+}
+
+@keyframes bootLineReveal {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
 
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-.animation-delay-300 {
-  animation-delay: 0.3s;
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.7s ease-out forwards;
 }
 
-.animation-delay-600 {
-  animation-delay: 0.6s;
+.animate-fadeInRight {
+  animation: fadeInRight 0.7s ease-out forwards;
 }
 
-.animation-delay-900 {
-  animation-delay: 0.9s;
+.animate-fadeInScale {
+  animation: fadeInScale 0.6s ease-out forwards;
 }
+
+.animate-textGlow {
+  animation: textGlow 2s ease-in-out infinite;
+}
+
+.animate-borderGlow {
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+.animate-gentleFloat {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.animate-holographic {
+  background-size: 200% 200%;
+  animation: holographic 3s ease infinite;
+}
+
+.animate-bootFlicker {
+  animation: bootFlicker 4s ease-in-out infinite;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-700 { animation-delay: 0.7s; }
+.animation-delay-800 { animation-delay: 0.8s; }
+.animation-delay-900 { animation-delay: 0.9s; }
+.animation-delay-1000 { animation-delay: 1.0s; }
+.animation-delay-1200 { animation-delay: 1.2s; }
+.animation-delay-1500 { animation-delay: 1.5s; }
+.animation-delay-2000 { animation-delay: 2.0s; }

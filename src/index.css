@@ -1,23 +1,386 @@
 @import './utils/animations.css';
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   ROOT VARIABLES - CYBERPUNK COLOR SYSTEM
+   ============================================ */
+:root {
+  --neon-cyan: #00f0ff;
+  --neon-magenta: #bf00ff;
+  --neon-green: #00ff88;
+  --neon-blue: #4d7cff;
+  --neon-orange: #ff6b35;
+  --neon-pink: #ff2d95;
+  --neon-yellow: #ffd700;
 
+  --bg-primary: #0a0a1a;
+  --bg-surface: #0f0f2a;
+  --bg-card: #151538;
+  --bg-card-hover: #1a1a45;
+  --border-color: #1e1e4a;
+  --border-glow: #2a2a5e;
+
+  --text-primary: #e8e8ff;
+  --text-secondary: #a0a0cc;
+  --text-muted: #6b6b99;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply text-gray-800 font-sans;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-semibold;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 section {
   @apply scroll-mt-16;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-magenta));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neon-green), var(--neon-cyan));
+}
+
+/* ============================================
+   GLASSMORPHISM
+   ============================================ */
+.glass {
+  background: rgba(15, 15, 42, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(21, 21, 56, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 240, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(26, 26, 69, 0.7);
+  border-color: rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.1), inset 0 0 20px rgba(0, 240, 255, 0.03);
+}
+
+/* ============================================
+   NEON TEXT EFFECTS
+   ============================================ */
+.neon-text {
+  color: var(--neon-cyan);
+  text-shadow:
+    0 0 7px rgba(0, 240, 255, 0.6),
+    0 0 20px rgba(0, 240, 255, 0.3),
+    0 0 40px rgba(0, 240, 255, 0.1);
+}
+
+.neon-text-magenta {
+  color: var(--neon-magenta);
+  text-shadow:
+    0 0 7px rgba(191, 0, 255, 0.6),
+    0 0 20px rgba(191, 0, 255, 0.3);
+}
+
+.neon-text-green {
+  color: var(--neon-green);
+  text-shadow:
+    0 0 7px rgba(0, 255, 136, 0.6),
+    0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00f0ff, #bf00ff, #00ff88);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic 4s ease infinite;
+}
+
+/* ============================================
+   NEON BORDERS & GLOWS
+   ============================================ */
+.neon-border {
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow:
+    0 0 5px rgba(0, 240, 255, 0.1),
+    inset 0 0 5px rgba(0, 240, 255, 0.05);
+}
+
+.neon-border:hover {
+  border-color: rgba(0, 240, 255, 0.6);
+  box-shadow:
+    0 0 15px rgba(0, 240, 255, 0.2),
+    0 0 30px rgba(0, 240, 255, 0.1),
+    inset 0 0 10px rgba(0, 240, 255, 0.05);
+}
+
+.glow-box {
+  box-shadow:
+    0 0 15px rgba(0, 240, 255, 0.15),
+    0 0 30px rgba(0, 240, 255, 0.05);
+}
+
+/* ============================================
+   SECTION HEADING STYLE
+   ============================================ */
+.section-heading {
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  border-radius: 2px;
+}
+
+/* ============================================
+   SCAN LINE OVERLAY
+   ============================================ */
+.scanline-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 240, 255, 0.08);
+  animation: scanlineMove 6s linear infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ============================================
+   HOLOGRAPHIC CARD EFFECT
+   ============================================ */
+.holo-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.holo-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 240, 255, 0.03) 40%,
+    rgba(191, 0, 255, 0.03) 50%,
+    rgba(0, 255, 136, 0.03) 60%,
+    transparent 70%
+  );
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.holo-card:hover::before {
+  transform: rotate(180deg);
+}
+
+/* ============================================
+   3D TILT CARD
+   ============================================ */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateY(-2deg) rotateX(2deg) scale(1.02);
+}
+
+/* ============================================
+   TERMINAL STYLE
+   ============================================ */
+.terminal-prompt::before {
+  content: '> ';
+  color: var(--neon-green);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.terminal-text {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ============================================
+   SCROLL REVEAL CLASSES
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================
+   XP BAR STYLES
+   ============================================ */
+.xp-bar-track {
+  background: rgba(0, 240, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+  height: 8px;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  position: relative;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.xp-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+  border-radius: 0 9999px 9999px 0;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+.cyber-btn {
+  position: relative;
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.cyber-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.cyber-btn:hover {
+  background: rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.cyber-btn:hover::before {
+  left: 100%;
+}
+
+.cyber-btn-filled {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(191, 0, 255, 0.2));
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  color: white;
+}
+
+.cyber-btn-filled:hover {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(191, 0, 255, 0.3));
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), 0 0 40px rgba(191, 0, 255, 0.1);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  
+  .glass-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
