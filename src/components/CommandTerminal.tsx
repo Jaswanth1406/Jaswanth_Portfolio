@@ -299,13 +299,13 @@ drwxr-xr-x  contact/
   if (!terminalOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setTerminalOpen(false)}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setTerminalOpen(false)}>
       {/* Backdrop */}
       <div className="absolute inset-0" style={{ background: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(4px)' }} />
 
       {/* Terminal Window */}
       <div
-        className="relative w-full max-w-2xl rounded-xl overflow-hidden"
+        className="relative w-full max-w-2xl max-h-[90vh] flex flex-col rounded-xl overflow-hidden"
         style={{
           background: 'rgba(10, 10, 26, 0.97)',
           border: '1px solid rgba(0, 240, 255, 0.2)',
@@ -325,7 +325,7 @@ drwxr-xr-x  contact/
         {/* Terminal body */}
         <div
           ref={scrollRef}
-          className="p-4 h-[400px] overflow-y-auto font-mono text-sm"
+          className="p-3 sm:p-4 h-[60vh] sm:h-[400px] overflow-y-auto font-mono text-xs sm:text-sm"
           onClick={() => inputRef.current?.focus()}
           style={{
             background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 240, 255, 0.008) 2px, rgba(0, 240, 255, 0.008) 4px)',
@@ -334,7 +334,7 @@ drwxr-xr-x  contact/
           {history.map((line, idx) => (
             <div
               key={idx}
-              className="whitespace-pre-wrap leading-relaxed"
+              className="whitespace-pre-wrap leading-relaxed break-all sm:break-normal"
               style={{
                 color:
                   line.type === 'input' ? '#00ff88' :

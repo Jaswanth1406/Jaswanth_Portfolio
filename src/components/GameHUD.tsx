@@ -211,9 +211,9 @@ const GameHUD: React.FC = () => {
       </div>
 
       {/* HUD Panel - Bottom Right */}
-      <div className="fixed bottom-4 right-4 z-40 flex flex-col items-end gap-2 pointer-events-auto">
+      <div className="fixed bottom-2 right-2 sm:bottom-4 sm:right-4 z-40 flex flex-col items-end gap-2 pointer-events-none">
         <div
-          className={`flex items-center gap-3 px-4 py-2 rounded-xl transition-all duration-300 ${
+          className={`flex items-center gap-2 sm:gap-3 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl transition-all duration-300 pointer-events-auto ${
             levelUpFlash ? 'scale-110' : 'scale-100'
           }`}
           style={{
@@ -310,10 +310,10 @@ const GameHUD: React.FC = () => {
 
       {/* Achievement Panel Overlay */}
       {showAchievementPanel && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setShowAchievementPanel(false)}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 pointer-events-auto" onClick={() => setShowAchievementPanel(false)}>
           <div className="absolute inset-0" style={{ background: 'rgba(0, 0, 0, 0.7)', backdropFilter: 'blur(4px)' }} />
           <div
-            className="relative w-full max-w-lg max-h-[70vh] overflow-y-auto rounded-xl p-6"
+            className="relative w-full max-w-lg max-h-[80vh] flex flex-col overflow-hidden rounded-xl p-4 sm:p-6"
             style={{
               background: 'rgba(15, 15, 42, 0.95)',
               border: `1px solid ${isCompleted ? 'rgba(255, 215, 0, 0.2)' : 'rgba(0, 240, 255, 0.15)'}`,
@@ -336,17 +336,17 @@ const GameHUD: React.FC = () => {
 
             {isCompleted && (
               <div
-                className="mb-4 p-3 rounded-lg text-center"
+                className="mb-4 p-3 rounded-lg text-center shrink-0"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 140, 0, 0.08))',
                   border: '1px solid rgba(255, 215, 0, 0.15)',
                 }}
               >
-                <p className="font-heading text-sm text-yellow-400">🎉 All Achievements Unlocked! Portfolio Mastered!</p>
+                <p className="font-heading text-xs sm:text-sm text-yellow-400">🎉 All Achievements Unlocked! Portfolio Mastered!</p>
               </div>
             )}
 
-            <div className="space-y-2">
+            <div className="space-y-2 overflow-y-auto pr-1 flex-1">
               {ACHIEVEMENTS.map((ach) => {
                 const unlocked = unlockedAchievements.includes(ach.id);
                 return (
@@ -376,8 +376,8 @@ const GameHUD: React.FC = () => {
               })}
             </div>
 
-            <div className="mt-4 pt-4 text-center" style={{ borderTop: '1px solid rgba(0, 240, 255, 0.08)' }}>
-              <span className="font-mono text-xs text-gray-500">
+            <div className="mt-4 pt-4 text-center shrink-0" style={{ borderTop: '1px solid rgba(0, 240, 255, 0.08)' }}>
+              <span className="font-mono text-[10px] sm:text-xs text-gray-500">
                 Total XP: <span style={{ color: isGolden ? '#ffd700' : '#00f0ff' }}>{xp}/{MAX_XP}</span> | Level: <span style={{ color: isGolden ? '#ffd700' : '#bf00ff' }}>
                   {isMaxLevel ? 'MAX' : level}
                 </span>

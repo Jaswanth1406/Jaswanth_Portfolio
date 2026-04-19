@@ -7,7 +7,7 @@ interface Certificate {
   name: string;
   issuer: string;
   date: string;
-  pdfUrl: string;
+  imageUrl: string;
   description: string;
   category: 'winner' | 'runner-up' | 'third' | 'selected' | 'course' | 'diploma' | 'conference' | 'workshop';
 }
@@ -30,28 +30,28 @@ const Certificates: React.FC = () => {
 
   const certificates: Certificate[] = [
     // --- Hackathons & Competitions ---
-    { id: 1, name: "India Innovates", issuer: "India Innovates", date: "2025", pdfUrl: "/certificates/India Innovates Certificate.pdf", description: "Among 30,000+ participants nationwide, our team was selected and got the opportunity to present our project at Bharat Mandapam, New Delhi.", category: "selected" },
-    { id: 2, name: "Chakravyuha '26 Hackathon", issuer: "Chakravyuha", date: "2026", pdfUrl: "/certificates/Chakravyuha_26 Hackathon.pdf", description: "Secured Second Place (Runner-Up) in the Chakravyuha '26 Hackathon.", category: "runner-up" },
-    { id: 3, name: "Dev-Arena '26", issuer: "Dev-Arena", date: "2026", pdfUrl: "/certificates/Dev-Arena_26.pdf", description: "Secured Third Place in the Dev-Arena '26 Hackathon.", category: "third" },
-    { id: 4, name: "AI Wars", issuer: "AI Wars", date: "2025", pdfUrl: "/certificates/AI Wars.pdf", description: "Winner of the AI Wars competition.", category: "winner" },
-    { id: 5, name: "Origin Hackathon", issuer: "Origin", date: "2025", pdfUrl: "/certificates/Origin Hackathon certificate .pdf", description: "Winner of the Origin Hackathon.", category: "winner" },
-    { id: 6, name: "Tekhora '26 Hackathon", issuer: "Tekhora", date: "2026", pdfUrl: "/certificates/Tekhora_26 Hackathon.pdf", description: "Winner of the Tekhora '26 Hackathon.", category: "winner" },
-    { id: 7, name: "BNY Service Jam", issuer: "BNY", date: "2025", pdfUrl: "/certificates/BNY Service Jam Certificate .pdf", description: "Winner of the BNY Service Jam.", category: "winner" },
+    { id: 1, name: "India Innovates", issuer: "India Innovates", date: "2025", imageUrl: "/certificates/images/India Innovates Certificate.jpg", description: "Among 30,000+ participants nationwide, our team was selected and got the opportunity to present our project at Bharat Mandapam, New Delhi.", category: "selected" },
+    { id: 2, name: "Chakravyuha '26 Hackathon", issuer: "Chakravyuha", date: "2026", imageUrl: "/certificates/images/Chakravyuha_26 Hackathon.jpg", description: "Secured Second Place (Runner-Up) in the Chakravyuha '26 Hackathon.", category: "runner-up" },
+    { id: 3, name: "Dev-Arena '26", issuer: "Dev-Arena", date: "2026", imageUrl: "/certificates/images/Dev-Arena_26.jpg", description: "Secured Third Place in the Dev-Arena '26 Hackathon.", category: "third" },
+    { id: 4, name: "AI Wars", issuer: "AI Wars", date: "2025", imageUrl: "/certificates/images/AI Wars.jpg", description: "Winner of the AI Wars competition.", category: "winner" },
+    { id: 5, name: "Origin Hackathon", issuer: "Origin", date: "2025", imageUrl: "/certificates/images/Origin Hackathon certificate .jpg", description: "Winner of the Origin Hackathon.", category: "winner" },
+    { id: 6, name: "Tekhora '26 Hackathon", issuer: "Tekhora", date: "2026", imageUrl: "/certificates/images/Tekhora_26 Hackathon.jpg", description: "Winner of the Tekhora '26 Hackathon.", category: "winner" },
+    { id: 7, name: "BNY Service Jam", issuer: "BNY", date: "2025", imageUrl: "/certificates/images/BNY Service Jam Certificate .jpg", description: "Winner of the BNY Service Jam.", category: "winner" },
     // --- Diploma & Courses ---
-    { id: 8, name: "Diploma in Programming", issuer: "Indian Institute of Technology Madras", date: "2026", pdfUrl: "/certificates/IITM Diploma in Programming.pdf", description: "Diploma in Programming from IIT Madras.", category: "diploma" },
-    { id: 9, name: "Advanced Certificate in ML & Data Science", issuer: "IIT Madras / NPTEL", date: "2025", pdfUrl: "/certificates/Advanced Certificate in Machine Learning and Data Science.pdf", description: "Advanced course certificate covering Machine Learning and Data Science.", category: "course" },
-    { id: 10, name: "Foundation in Programming & DS", issuer: "IIT Madras", date: "2024", pdfUrl: "/certificates/IITM-BS-FOUNDATION-CERTIFICATE.pdf", description: "Foundations for Data Science.", category: "course" },
-    { id: 11, name: "Games We Play", issuer: "IIT Madras", date: "2024", pdfUrl: "/certificates/Games-We-Play.pdf", description: "Game theory and strategic decision making.", category: "course" },
-    { id: 12, name: "Understanding the Google Cloud Platform", issuer: "IIT Madras", date: "2025", pdfUrl: "/certificates/Understanding-Google-Cloud-Platform.pdf", description: "Comprehensive understanding of Google Cloud Platform services and architecture.", category: "course" },
+    { id: 8, name: "Diploma in Programming", issuer: "Indian Institute of Technology Madras", date: "2026", imageUrl: "/certificates/images/IITM Diploma in Programming.jpg", description: "Diploma in Programming from IIT Madras.", category: "diploma" },
+    { id: 9, name: "Advanced Certificate in ML & Data Science", issuer: "IIT Madras / NPTEL", date: "2025", imageUrl: "/certificates/images/Advanced Certificate in Machine Learning and Data Science.jpg", description: "Advanced course certificate covering Machine Learning and Data Science.", category: "course" },
+    { id: 10, name: "Foundation in Programming & DS", issuer: "IIT Madras", date: "2024", imageUrl: "/certificates/images/IITM-BS-FOUNDATION-CERTIFICATE.jpg", description: "Foundations for Data Science.", category: "course" },
+    { id: 11, name: "Games We Play", issuer: "IIT Madras", date: "2024", imageUrl: "/certificates/images/Games-We-Play.jpg", description: "Game theory and strategic decision making.", category: "course" },
+    { id: 12, name: "Understanding the Google Cloud Platform", issuer: "IIT Madras", date: "2025", imageUrl: "/certificates/images/Understanding-Google-Cloud-Platform.jpg", description: "Comprehensive understanding of Google Cloud Platform services and architecture.", category: "course" },
     // --- Conference ---
-    { id: 13, name: "IIPA Southern Regional Conference", issuer: "IIPA Pondicherry & Pondicherry University", date: "2025", pdfUrl: "/certificates/IIPA_SOUTHERN_REGIONAL_CONFERENCE.pdf", description: "Our abstract was selected and we presented our paper titled 'AI-Powered Government Scheme Recommender' at the IIPA Southern Regional Conference.", category: "conference" },
+    { id: 13, name: "IIPA Southern Regional Conference", issuer: "IIPA Pondicherry & Pondicherry University", date: "2025", imageUrl: "/certificates/images/IIPA_SOUTHERN_REGIONAL_CONFERENCE.jpg", description: "Our abstract was selected and we presented our paper titled 'AI-Powered Government Scheme Recommender' at the IIPA Southern Regional Conference.", category: "conference" },
     // --- Workshops ---
-    { id: 14, name: "8 Things About LLMs", issuer: "IIT Madras", date: "2025", pdfUrl: "/certificates/JASWANTHPRASANNA - 8 Things you wish you had known about LLMs.pdf", description: "How to work more effectively and responsibly with LLMs.", category: "workshop" },
-    { id: 15, name: "Building Trustworthy AI", issuer: "IIT Madras & Cargill", date: "2025", pdfUrl: "/certificates/JASWANTHPRASANNA - Building Trustworthy AI through Data Quality.pdf", description: "Deep insights into how high-quality data can enable reliable AI systems.", category: "workshop" },
-    { id: 16, name: "GenAI", issuer: "IIT Madras", date: "2025", pdfUrl: "/certificates/JASWANTHPRASANNA - GenAI.pdf", description: "Deep dive into the world of Generative AI.", category: "workshop" },
-    { id: 17, name: "Deploying ML Apps using GCP", issuer: "IIT Madras", date: "2025", pdfUrl: "/certificates/JASWANTHPRASANNA - Deploying ML Apps at Lightning Speed using GCP.pdf", description: "Hands-on workshop on deploying ML apps rapidly using Google Cloud Platform.", category: "workshop" },
-    { id: 18, name: "Git & GitHub Workshop", issuer: "IIT Madras", date: "2025", pdfUrl: "/certificates/JASWANTHPRASANNA - Code, Commit,Collaborate Hands-on with Git & GitHub.pdf", description: "Practical workshop on version control and collaborative development.", category: "workshop" },
-    { id: 19, name: "Data Visualization Workshop", issuer: "Workshop", date: "2025", pdfUrl: "/certificates/Data Visualization Using Matplotlib & Seaborn Workshop.pdf", description: "Workshop on data visualization techniques using Matplotlib and Seaborn.", category: "workshop" },
+    { id: 14, name: "8 Things About LLMs", issuer: "IIT Madras", date: "2025", imageUrl: "/certificates/images/JASWANTHPRASANNA - 8 Things you wish you had known about LLMs.jpg", description: "How to work more effectively and responsibly with LLMs.", category: "workshop" },
+    { id: 15, name: "Building Trustworthy AI", issuer: "IIT Madras & Cargill", date: "2025", imageUrl: "/certificates/images/JASWANTHPRASANNA - Building Trustworthy AI through Data Quality.jpg", description: "Deep insights into how high-quality data can enable reliable AI systems.", category: "workshop" },
+    { id: 16, name: "GenAI", issuer: "IIT Madras", date: "2025", imageUrl: "/certificates/images/JASWANTHPRASANNA - GenAI.jpg", description: "Deep dive into the world of Generative AI.", category: "workshop" },
+    { id: 17, name: "Deploying ML Apps using GCP", issuer: "IIT Madras", date: "2025", imageUrl: "/certificates/images/JASWANTHPRASANNA - Deploying ML Apps at Lightning Speed using GCP.jpg", description: "Hands-on workshop on deploying ML apps rapidly using Google Cloud Platform.", category: "workshop" },
+    { id: 18, name: "Git & GitHub Workshop", issuer: "IIT Madras", date: "2025", imageUrl: "/certificates/images/JASWANTHPRASANNA - Code, Commit,Collaborate Hands-on with Git & GitHub.jpg", description: "Practical workshop on version control and collaborative development.", category: "workshop" },
+    { id: 19, name: "Data Visualization Workshop", issuer: "Workshop", date: "2025", imageUrl: "/certificates/images/Data Visualization Using Matplotlib & Seaborn Workshop.jpg", description: "Workshop on data visualization techniques using Matplotlib and Seaborn.", category: "workshop" },
   ];
 
   const filterCategories = [
@@ -147,20 +147,19 @@ const Certificates: React.FC = () => {
             </div>
           )}
 
-          {/* PDF Viewer */}
+          {/* Certificate Image Viewer */}
           <div
-            className="rounded-xl overflow-hidden relative"
+            className="rounded-xl overflow-hidden relative group"
             style={{
               border: `1px solid rgba(0, 240, 255, 0.15)`,
               boxShadow: `0 0 30px ${catConfig.glowColor}`,
             }}
           >
-            <div className="aspect-[16/9]">
-              <iframe
-                src={currentCert.pdfUrl}
-                className="w-full h-full"
-                title={currentCert.name}
-                style={{ backgroundColor: '#0f0f2a' }}
+            <div className="aspect-[4/3] sm:aspect-[16/9] w-full bg-[#0f0f2a] flex items-center justify-center overflow-hidden">
+              <img
+                src={currentCert.imageUrl}
+                alt={currentCert.name}
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
@@ -168,7 +167,7 @@ const Certificates: React.FC = () => {
           {/* Navigation Arrows */}
           <button
             onClick={previousCertificate}
-            className="absolute top-1/2 -translate-y-1/2 left-0 -ml-4 sm:-ml-12 p-2 rounded-full transition-all duration-300"
+            className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-0 sm:-ml-12 p-2 rounded-full transition-all duration-300 z-10"
             style={{
               background: 'rgba(0, 240, 255, 0.1)',
               border: '1px solid rgba(0, 240, 255, 0.3)',
@@ -188,7 +187,7 @@ const Certificates: React.FC = () => {
 
           <button
             onClick={nextCertificate}
-            className="absolute top-1/2 -translate-y-1/2 right-0 -mr-4 sm:-mr-12 p-2 rounded-full transition-all duration-300"
+            className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-0 sm:-mr-12 p-2 rounded-full transition-all duration-300 z-10"
             style={{
               background: 'rgba(0, 240, 255, 0.1)',
               border: '1px solid rgba(0, 240, 255, 0.3)',

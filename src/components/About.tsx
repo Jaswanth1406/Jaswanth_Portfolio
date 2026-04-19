@@ -48,7 +48,7 @@ const About: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs font-mono text-gray-500">{item.label}</p>
-                    <p className="text-sm text-gray-200">{item.value}</p>
+                    <p className="text-sm text-gray-200 break-all">{item.value}</p>
                   </div>
                 </div>
               ))}
