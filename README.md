@@ -1,60 +1,50 @@
-# 🌐 Personal Portfolio Website
+# 🎮 Jaswanth Prasanna — Interactive Cyberpunk Portfolio
 
-This is my **personal portfolio website**, built to showcase my background, technical skills, projects, and achievements. It is designed with a professional look and powered by Bolt features to ensure smooth user experience, responsiveness, and dynamic interactivity.
+Welcome to my **personal portfolio website**! This isn't just a standard resume website—it is a fully interactive, gamified, cyberpunk-themed digital experience built to showcase my background, technical skills, machine learning projects, and achievements.
 
-## 🔥 Features
+## 🚀 The Experience (Key Features)
 
-### ✅ About Section
-- Contains a short introduction about me.
-- Includes key personal and professional details.
+### 🕹️ Gamification & Progression System
+- **Active Leveling:** Earn XP (Experience Points) by exploring different sections of the website. Let's see if you can reach **Level 5 (MAX RANK)**!
+- **Achievement Vault:** Unlock hidden trophies for completing actions like discovering sections, checking out my GitHub projects, downloading my CV, and cracking the Command Terminal.
+- **Dynamic Game HUD:** A non-intrusive floating heads-up display tracking your XP, Level, and achievement progress in real time.
 
-### 🎓 Education Section
-- Highlights my academic background.
-- Lists my current studies and previous qualifications.
+### 💻 Interactive Command Terminal
+- Press **`** (Backtick) or use the HUD toggle to open a custom, built-in bash terminal!
+- Run commands like `help`, `whoami`, `stats`, `ls`, `achievements`, and `download cv`.
+- Navigate the entire portfolio using terminal commands (e.g., `cd projects`).
 
-### 🛠️ Skills Section
-- Displays technical skills with progress evaluation bars.
-- Categorized based on domains like programming, frameworks, tools, etc.
+### 🎨 Immersive Cyberpunk Aesthetics
+- **Boot Sequence:** An authentic nostalgic boot-up screen sequence when you first launch the site.
+- **Neon Glow Design:** Extensive use of CSS glassmorphism, responsive hover shimmers, deep dark themes, and dynamic gradient accents (`#00f0ff`, `#bf00ff`).
+- **Interactive Backgrounds:** Particle networks that react directly to your mouse movements, coupled with a custom trailing cursor.
+- **Responsive Layout:** Precision crafted for seamless viewing across Desktop, Tablet, and Mobile.
 
-### 💻 Projects Section
-- Features my GitHub-hosted projects.
-- Each project card redirects to the respective GitHub repository when clicked.
-
-### 📜 Certificates Section
-- Showcases my achievements with clickable certificate previews.
-- Users can view full-size certificates directly on the site.
-
-### 📬 Contact Section
-- Displays my email address.
-- Includes links to my professional social media profiles (LinkedIn, GitHub, etc.).
-
-### 🔻 Footer
-- Includes my name and geographic location.
-- Maintains consistent branding and visual closure.
-
-### 🌙 Extra Functionalities
-- **Dark Mode Toggle:** Enables switching between light and dark themes.
-- **CV Download Button:** Allows users to download my up-to-date resume in PDF format.
+### 🏆 Content Sections
+- **Projects Showcase:** An interactive 3D-tilt grid of my Top 11 AI, ML, and Full Stack applications (e.g. QueryMate, AEGIS AI).
+- **Certificate Gallery:** Built-in fast-loading visual certificates rendering direct high-res JPG images to heavily support mobile devices gracefully instead of relying on PDFs.
+- **Dynamic Timeline:** An elegant vertical timeline displaying professional experience and educational background.
+- **Skills Matrix:** Detailed domain-wise categorization of tech skills including LLMs, frameworks, languages, and tools.
 
 ## 🧑‍💻 Tech Stack
 
-- **React** + **TypeScript**
-- **Vite** (for blazing-fast build and dev server)
-- **Tailwind CSS** (utility-first CSS framework)
-- **Bolt** (modular UI and productivity features)
+- **Framework:** React 18 + TypeScript + Vite
+- **Styling:** Tailwind CSS (Utility-first with extensive custom utility injections for gradients/glows)
+- **Icons:** Lucide-React
+- **Scripting:** Python + PyMuPDF (Used internally for offline fast-rendering PDF to JPG pipelines for the certifications)
+- **Deployment:** Vercel / Netlify
 
 ## 🌐 Live Demo
 
-[🔗 View Live Website](https://jaswanthprasanna-portfolio.netlify.app/) <!-- Replace with your deployed URL -->
+[🔗 Start Playing Here](https://jaswanthprasanna-portfolio.netlify.app/) *(Launch the Live Version)*
 
-## 📬 Contact Me
+## 📬 Connect With Me
 
-Feel free to connect with me for collaborations, freelance work, or tech discussions!
+Feel free to connect with me for collaborations, freelance work, or any tech discussions!
 
-- 📧 Email: jaswanthprasanna68@gmail.com
-- 🔗 LinkedIn: [linkedin.com/in/jaswanth-prasanna](www.linkedin.com/in/jaswanth-prasanna)
-- 🐙 GitHub: [github.com/Jaswanth1406](https://github.com/Jaswanth1406)
+- 📧 **Email:** [jaswanthprasanna68@gmail.com](mailto:jaswanthprasanna68@gmail.com)
+- 🔗 **LinkedIn:** [linkedin.com/in/jaswanth-prasanna](https://www.linkedin.com/in/jaswanth-prasanna)
+- 🐙 **GitHub:** [github.com/Jaswanth1406](https://github.com/Jaswanth1406)
 
 ---
-
-> ⚡ Designed to reflect my personality and technical journey — clean, functional, and future-ready.
+> *"Designed to reflect my personality and technical journey — clean, highly functional, and future-ready."*
