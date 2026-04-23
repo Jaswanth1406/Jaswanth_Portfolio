@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Github, Code } from 'lucide-react';
+import { Github, Code, Trophy } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import { useGame } from '../context/GameContext';
 
@@ -14,6 +14,7 @@ interface Project {
   github: string;
   category: CategoryType[];
   gradient: string;
+  hackathonWinner?: boolean;
 }
 
 const Projects: React.FC = () => {
@@ -40,6 +41,7 @@ const Projects: React.FC = () => {
       github: 'https://github.com/Jaswanth1406/Synapse-AI',
       category: ['web', 'ai'],
       gradient: 'linear-gradient(135deg, #bf00ff, #ff2d95)',
+      hackathonWinner: true,
     },
     {
       id: 3,
@@ -70,6 +72,7 @@ const Projects: React.FC = () => {
       github: 'https://github.com/Jaswanth1406/STREAM---Suspicious-Transaction---Risk-Engine-for-Anomaly-Monitoring',
       category: ['web', 'ai', 'ml'],
       gradient: 'linear-gradient(135deg, #00f0ff, #bf00ff)',
+      hackathonWinner: true,
     },
     {
       id: 6,
@@ -80,6 +83,7 @@ const Projects: React.FC = () => {
       github: 'https://github.com/Jaswanth1406/Neuroscreen',
       category: ['web', 'ai', 'ml'],
       gradient: 'linear-gradient(135deg, #8b5cf6, #bf00ff)',
+      hackathonWinner: true,
     },
     {
       id: 7,
@@ -277,6 +281,22 @@ const ProjectCard: React.FC<{ project: Project; index: number; isInView: boolean
             <Github size={18} />
           </a>
         </div>
+        
+        {/* Hackathon Winner Badge */}
+        {project.hackathonWinner && (
+          <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-transform duration-300 transform hover:scale-105"
+            style={{
+              background: 'linear-gradient(135deg, #ffd700, #ff8c00)',
+              boxShadow: '0 4px 15px rgba(255, 215, 0, 0.5)',
+              border: '1px solid rgba(255, 255, 255, 0.5)',
+              backdropFilter: 'blur(4px)',
+            }}
+          >
+            <Trophy size={14} className="text-black" strokeWidth={2.5} />
+            <span className="text-xs font-bold text-black uppercase tracking-wider">Winner</span>
+          </div>
+        )}
+
         {/* Top gradient accent */}
         <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: project.gradient }} />
       </div>
